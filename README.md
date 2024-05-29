@@ -1,6 +1,6 @@
 # Minecraft Server ATuser Plugins
 
-Minecraft Server ATuser Plugins 是一个基于 Bukkit API 的 Minecraft 服务端插件，允许在游戏中使用 "@" 符号提醒特定玩家。这个插件为 Minecraft 服务器提供了方便的方式向其他玩家发送消息，无论他们是否在线。
+Minecraft Server ATuser Plugins 是一个基于 Bukkit API 的 Minecraft 服务端插件，允许在游戏中使用 "@" 符号提醒特定玩家。这个插件为 Minecraft 服务器提供了方便的方式提醒其他玩家注意消息
 
 ## 安装说明
 
