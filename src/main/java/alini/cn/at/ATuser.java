@@ -1,11 +1,8 @@
 package alini.cn.at;
 
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.permissions.Permission;
-import org.bukkit.permissions.PermissionAttachment;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
