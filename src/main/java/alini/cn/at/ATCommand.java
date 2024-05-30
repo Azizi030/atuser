@@ -1,10 +1,15 @@
 package alini.cn.at;
 
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+
+
+
+import static alini.cn.at.At.COOLDOWN_TIME;
 
 
 
@@ -117,6 +122,7 @@ public class ATCommand implements CommandExecutor {
                             for (Player player : getServer().getOnlinePlayers()) {
                                 //将消息发送给所有玩家
                                 player.sendMessage("§b[@] §e" + playerName + "§f悄悄地§b@§f了所有人");
+                                sender.getServer().getPlayer(playerName).playSound(sender.getServer().getPlayer(playerName).getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                             }
                             return true;
                         }else {
@@ -131,6 +137,7 @@ public class ATCommand implements CommandExecutor {
                     //将消息发送给被at的玩家
                     if (sender.getServer().getPlayer(atPlayerName) != null) {
                         sender.getServer().getPlayer(atPlayerName).sendMessage("§4[管理员] §b[@] §e" + playerName + "§f悄悄地§b@§f了你");
+                        sender.getServer().getPlayer(atPlayerName).playSound(sender.getServer().getPlayer(atPlayerName).getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                     }else {
                         sender.sendMessage("§4[管理员] §b[@] §c玩家不在线");
                     }
@@ -144,6 +151,7 @@ public class ATCommand implements CommandExecutor {
                             for (Player player : getServer().getOnlinePlayers()) {
                                 //将消息发送给所有玩家
                                 player.sendMessage("§b[@] §e" + playerName + "§f悄悄地§b@§f了所有人");
+                                sender.getServer().getPlayer(playerName).playSound(sender.getServer().getPlayer(playerName).getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                             }
                             return true;
                         }else {
@@ -169,6 +177,7 @@ public class ATCommand implements CommandExecutor {
                         At.cooldowns.put(playerName, System.currentTimeMillis() + COOLDOWN_TIME * 1000);
                         if (!sender.getServer().getPlayer(atPlayerName).hasPermission("at.shield")) {
                             sender.getServer().getPlayer(atPlayerName).sendMessage("§b[@] §e" + playerName + "§f悄悄地§b@§f了你");
+                            sender.getServer().getPlayer(atPlayerName).playSound(sender.getServer().getPlayer(atPlayerName).getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                             return true;
                         }
                     }else {

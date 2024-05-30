@@ -1,5 +1,6 @@
 package alini.cn.at;
 
+import org.bukkit.Sound;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
@@ -8,7 +9,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static alini.cn.at.At.COOLDOWN_TIME;
-import static org.bukkit.Bukkit.getServer;
 
 public class ATuser implements Listener {
 
@@ -37,6 +37,7 @@ public class ATuser implements Listener {
                     if (event.getPlayer().getServer().getPlayer(atPlayerName) != null) {
                         //管理员权限，不管被at的玩家是否有at.shield权限，都发送消息
                         event.getPlayer().getServer().getPlayer(atPlayerName).sendMessage("§4[管理员] §b[@] §e" + playerName + "§f在聊天中提到了你");
+                        event.getPlayer().getServer().getPlayer(atPlayerName).playSound(event.getPlayer().getServer().getPlayer(atPlayerName).getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
 
                     }
                 }
@@ -69,6 +70,7 @@ public class ATuser implements Listener {
                         At.cooldowns.put(playerName, System.currentTimeMillis() + COOLDOWN_TIME * 1000);
                         if (!event.getPlayer().getServer().getPlayer(atPlayerName).hasPermission("at.shield")) {
                             event.getPlayer().getServer().getPlayer(atPlayerName).sendMessage("§b[@] §e" + playerName + "§f在聊天中提到了你");
+                            event.getPlayer().getServer().getPlayer(atPlayerName).playSound(event.getPlayer().getServer().getPlayer(atPlayerName).getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
                         }
                     }
                 }
