@@ -6,7 +6,7 @@
 
     <groupId>alini.cn</groupId>
     <artifactId>at</artifactId>
-    <version>1.0.5-beat-all-Def</version>
+    <version>1.0.6</version>
     <packaging>jar</packaging>
 
     <name>at</name>

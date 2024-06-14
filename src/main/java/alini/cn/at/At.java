@@ -25,6 +25,9 @@ public final class At extends JavaPlugin {
         Objects.requireNonNull(getCommand("at")).setExecutor(new ATCommand());
         // 注册Tab补全
         this.getCommand("at").setTabCompleter(new ATCommandTabCompleter());
+        //注册事件监听器，事件监听为chattab
+        getServer().getPluginManager().registerEvents(new ChatTab(), this);
+
         // 加载配置文件
         // 获取配置文件
         File configFile = new File(getDataFolder(), "config.yml");
